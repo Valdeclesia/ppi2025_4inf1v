@@ -1,0 +1,25 @@
+.container {
+    margin: 0 auto;
+    max-width: 80rem;
+}
+
+
+.div {
+    background-color: var(--azulclaro);
+    box-shadow: 0 0 1rem var(--azulclaro);
+    margin: 3rem 5rem;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 2rem;
+    color: var(--russian_violet);
+    margin-bottom: 2rem;
+
+}
+
+.text {
+    font-size: 2rem;
+}
