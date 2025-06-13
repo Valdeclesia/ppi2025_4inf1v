@@ -1,74 +1,106 @@
-.grid {
-  padding: 3rem 25rem;
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  grid-template-rows: repeat(auto-fit, min-content);
-
-}
-
-.card {
-  height: 60rem;
-  background-color: var(--card);
-  color: var(--letra);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 1rem rgba(68, 70, 199, 0.5);
-  font-size: 3rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-1rem); 
-  box-shadow: 0.8rem 0.8rem 1.6rem rgba(122, 242, 247, 0.6);
-}
-
 .container {
-
   display: grid;
 
   grid-template-areas:
-    "header1"
-    "main"
-    "footer";
- 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 10rem auto 10rem;
-  min-height: 100vh;
+    "header1 header1 header1"
+    "aside1 header2 aside2"
+    "aside1 main aside2"
+    "aside1 footer2 aside2"
+    "bottomFooter bottomFooter aside2";
+
+  grid-template-columns: 20rem 1fr 20rem;
+
+  grid-template-rows: 8rem 1fr 1fr 1fr 8rem;
 
   @media (max-width: 1200px) {
     grid-template-areas:
+      "header1 header1"
+      "aside1 header2"
+      "aside1 main"
+      "aside1 footer2"
+      "bottomFooter bottomFooter";
+
+    grid-template-columns: 20rem 1fr;
+    grid-template-rows: 8rem 1fr 1fr 1fr 8rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-areas:
       "header1"
       "main"
-      "footer";
+      "bottomFooter";
 
     grid-template-columns: 1fr;
+    grid-template-rows: 10rem auto 10rem;
   }
+
+  min-height: 100vh;
 }
 
-.main {
-  width: 100%;
-}
-
-.header1 {
-  grid-area: header1;
-  background-color: rgb(14, 94, 80);
-  display: flex;
-  justify-content: center;
-  font-size: 1.6rem;
-    padding: 4rem;
-  min-height: 10rem;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: rgb(14, 94, 80);
-  color:  var(--letra);
+.grid {
+  grid-area: main;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
-    padding: 3rem;
-  min-height: 16rem; 
+  
+  background-color: white;
+  color: black;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 20rem;
+  background-color: var(--primary-dark);
+  color: var(--primary-contrast-light);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.gridAreaBase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+}
+
+
+.header1 {
+  grid-area: header1;
+  background-color: red;
+}
+
+.header2 {
+  grid-area: header2;
+  background-color: aqua;
+}
+
+.aside1 {
+  grid-area: aside1;
+  background-color: yellow;
+}
+
+.aside2 {
+  grid-area: aside2;
+  background-color: yellow;
+}
+
+.footer2 {
+  grid-area: footer2;
+  background-color: green;
+}
+
+.bottomFooter {
+  grid-area: bottomFooter;
+  background-color: pink;
 }
