@@ -1,0 +1,58 @@
+.lucky-container {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--primary-contrast-light);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;
+  max-width: 40rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: var(--primary-dark);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: var(--primary);
+}
+
+.mensagem {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.numerosSorteados {
+  margin-top: 15px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  user-select: none;
+  color: #eee;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.numeroSorteado {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.numeroSorteado:hover {
+  transform: scale(1.2);
+  cursor: default;
+}
