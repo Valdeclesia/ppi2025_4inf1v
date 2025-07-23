@@ -2,31 +2,52 @@ import { useState } from "react";
 import styles from "./LuckyNumber.module.css";
 
 export function LuckyNumber() {
-  const [sorteados, setSorteados] = useState([]);
-  const [mensagem, setMensagem] = useState("");
-  const [numeroAtual, setNumeroAtual] = useState(null);
+  //REACT HOOK - useState()
+  const [luckyNumber, setLuckyNumber] = useState(0);
+  const [array, setArray] = useState([]);
+  const [message, setMessage] = useState("");
 
-  function sortearNumero() {
-    const novoNumero = Math.floor(Math.random() * 30) + 1;
+  function handleClick() {
+    var n = Math.ceil(Math.random() * 31);
+    setLuckyNumber(n);
 
-    if (sorteados.includes(novoNumero)) {
-      setMensagem(`💬 O gato ${novoNumero} já foi sorteado! 🐾`);
+    if (array.includes(n)) {
+      setMessage(`The number ${n} is already picked!`);
     } else {
-      setSorteados([...sorteados, novoNumero]);
-      setNumeroAtual(novoNumero);
-      setMensagem(`🎉gato ${novoNumero} sorteado com sucesso! 🐱`);
+      setMessage("");
+      setArray([...array, n]);
     }
   }
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}> Quantidade de Gatitos!!! </h2>
-       <h2 className={styles.title}>🐱🐱</h2>
-      {numeroAtual !== null && <div className={styles.number}>{numeroAtual}</div>}
-      <button onClick={sortearNumero} className={styles.button}>
-        Sortear número
-      </button>
-      {mensagem && <p className={styles.message}>{mensagem}</p>}
+      {luckyNumber ? (
+        <h1>Lucky Number = {luckyNumber}</h1>
+      ) : (
+        <h1>Lucky Number 🎲</h1>
+      )}
+      <div className={styles.buttons}>
+        <button className={styles.button} onClick={handleClick}>
+          I'm feeling lucky today!
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setLuckyNumber(0);
+            setArray([]);
+            setMessage("");
+          }}
+        >
+          RESET 🔄
+        </button>
+      </div>
+      {message && <p>{message}</p>}
+      {array.length > 0 && (
+        <div>
+          <h3>Lucky Numbers Array:</h3>
+          <p>[{array.toString()}]</p>
+        </div>
+      )}
     </div>
   );
 }
