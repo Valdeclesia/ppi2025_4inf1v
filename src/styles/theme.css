@@ -14,4 +14,10 @@
   --gray-700: #495057;
   --gray-800: #343a40;
   --gray-900: #212529;
+    --primary: #634fb6;           
+  --primary-light: #fcd6da;     
+  --primary-dark: #60b5eea9;     
+  --primary-contrast-light: #fff;
+  --primary-contrast-dark: #111;
+  
 }
