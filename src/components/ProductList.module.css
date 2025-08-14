@@ -6,10 +6,30 @@
   gap: 2rem;
 }
 
+/* Campo de pesquisa bonito */
+.searchInput {
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  border-radius: 3rem;
+  border: 2px solid var(--primary);
+  outline: none;
+  width: 100%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.searchInput:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid de produtos */
 .productList {
   padding: 1rem 3rem;
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-template-rows: repeat(auto-fit, min-content);
+  width: 100%;
+  max-width: 1400px;
 }

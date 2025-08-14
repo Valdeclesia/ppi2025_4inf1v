@@ -1,16 +1,15 @@
 .container {
   padding: 3rem;
   display: flex;
-  flex-direction: row; /* row column row-reverse column-reverse */
-  flex-wrap: wrap; /* nowrap wrap wrap-reverse */
+  flex-direction: row; 
+  flex-wrap: wrap; 
   gap: 3rem;
 
-  /* EIXO HORIZONTAL - Main Axis */
-  justify-content: center; /* flex-start flex-end center space-between space-around space-evenly */
 
-  /* EIXO VERTICAL - Cross Axis */
-  align-items: center; /* flex-start flex-end center baseline stretch */
-  align-content: center; /* flex-start flex-end center baseline stretch */
+  justify-content: center; 
+
+  align-items: center; 
+  align-content: center; 
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;

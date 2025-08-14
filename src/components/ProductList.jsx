@@ -11,6 +11,7 @@ export function ProductList({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function fetchProducts() {
@@ -27,13 +28,29 @@ export function ProductList({ addToCart }) {
     fetchProducts();
   }, []);
 
+  // Filtragem em tempo real
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.container}>
+      {/* Campo de pesquisa */}
+      <input
+        type="text"
+        placeholder="🔍 Buscar produto..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className={styles.searchInput}
+      />
+
+      {/* Lista de produtos */}
       <div className={styles.productList}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Product key={product.id} product={product} addToCart={addToCart} />
         ))}
       </div>
+
       {loading && (
         <div>
           <CircularProgress
