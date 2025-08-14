@@ -8,7 +8,7 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login Submetido:", { email, password });
-    // Lógica para autenticar o usuário
+  
   };
 
   return (

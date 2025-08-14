@@ -11,7 +11,7 @@ export function Header({ cart }) {
         <h1>TJA Megastore</h1>
       </Link>
       
-      {/* Links de navegação com ícones e maior */}
+      {}
       <nav className={styles.navMenu}>
         <Link to="/login" className={styles.navLink}>
           <LogIn size={24} />

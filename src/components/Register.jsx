@@ -9,7 +9,7 @@ export function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Cadastro Submetido:", { name, email, password });
-    // Lógica para cadastrar um novo usuário
+  
   };
 
   return (

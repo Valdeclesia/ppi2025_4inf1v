@@ -58,7 +58,7 @@ export function Cart({ cart, setCart }) {
         <p className={styles.empty}>Seu carrinho está vazio.</p>
       ) : (
         <div className={styles.content}>
-          {/* ESQUERDA */}
+          {}
           <div className={styles.left}>
             <button className={styles.clearButton} onClick={clearCart}>
               REMOVER TODOS OS PRODUTOS
@@ -80,7 +80,7 @@ export function Cart({ cart, setCart }) {
               ))}
             </ul>
 
-            {/* SERVIÇOS */}
+            {}
             <div className={styles.services}>
               <h3>🛠 SERVIÇOS</h3>
               <h4>📌 GARANTIA ESTENDIDA ORIGINAL AMPLIADA</h4>
@@ -130,7 +130,7 @@ export function Cart({ cart, setCart }) {
             </div>
           </div>
 
-          {/* DIREITA */}
+          {}
           <div className={styles.right}>
             <h3>RESUMO</h3>
             <p><strong>Valor dos Produtos:</strong> R$ {total.toFixed(2)}</p>
